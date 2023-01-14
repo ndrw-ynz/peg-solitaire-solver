@@ -16,9 +16,6 @@ public class MainApplication extends Application {
         Group root = new Group();
         Scene scene = new Scene(root);
 
-
-        root.getChildren().addAll();
-
         PegBoard pegBoard = new PegBoard();
 
         stage.setScene(scene);
