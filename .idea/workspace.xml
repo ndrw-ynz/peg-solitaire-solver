@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162c5394-09bb-4308-97b3-6c8f494c8a59" name="Changes" comment="Modified application name, removed unnecessary files. Init of PegBoard.java.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegPiece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/Square.java" afterDir="false" />
+    <list default="true" id="162c5394-09bb-4308-97b3-6c8f494c8a59" name="Changes" comment="Minor modifications in application files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,12 +89,44 @@
       <option name="project" value="LOCAL" />
       <updated>1673618025411</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Init of PegPiece.java">
+      <created>1673704635595</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673704635596</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Init of Square.java">
+      <created>1673704647023</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673704647023</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added utility methods for PegBoard">
+      <created>1673704682249</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673704682249</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Minor modifications in application files.">
+      <created>1673704714445</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673704714445</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Modified application name, removed unnecessary files. Init of PegBoard.java." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified application name, removed unnecessary files. Init of PegBoard.java." />
+    <MESSAGE value="Init of PegPiece.java" />
+    <MESSAGE value="Init of Square.java" />
+    <MESSAGE value="Added utility methods for PegBoard" />
+    <MESSAGE value="Minor modifications in application files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor modifications in application files." />
   </component>
 </project>
