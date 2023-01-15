@@ -7,47 +7,35 @@ import java.util.Arrays;
  * PegBoard is a class containing all the state and behavior of the
  * peg board of the GUI application.
  */
-public class PegBoard{
-    /**The integer value of an invalid piece.*/
-    private static final int INVALID = 0;
-    /**The integer value of an occupied piece.*/
-    private static final int OCCUPIED = 1;
-    /**The integer value of an empty piece.*/
-    private static final int EMPTY = 2;
+public class PegBoard {
+
     /**The peg board containing peg pieces.*/
-    private final int[][] board = new int[][] {
-            {0, 0, 1, 1, 1, 0, 0},
-            {0, 0, 1, 1, 1, 0, 0},
-            {1, 1, 1, 1, 1, 1, 1},
-            {1, 1, 1, 2, 1, 1, 1},
-            {1, 1, 1, 1, 1, 1, 1},
-            {0, 0, 1, 1, 1, 0, 0},
-            {0, 0, 1, 1, 1, 0, 0}
-    };
-
-    private final int[][] clearBoard = new int[][] {
-            {0, 0, 2, 2, 2, 0, 0},
-            {0, 0, 2, 2, 2, 0, 0},
-            {2, 2, 2, 2, 2, 2, 2},
-            {2, 2, 2, 1, 2, 2, 2},
-            {2, 2, 2, 2, 2, 2, 2},
-            {0, 0, 2, 2, 2, 0, 0},
-            {0, 0, 2, 2, 2, 0, 0}
-    };
-
+    private final Square[][] board;
 
     public PegBoard() {
-
+        this.board = new Square[7][7];
+        for (int row = 0; row < 7; row++) {
+            for (int col = 0; col < 7; col ++) {
+                boolean invalid = ((row <=1) && (col<=1)) || ((row >= 5) && (col <= 1)) ||((row <= 1) && (col >= 5)) || ((row >= 5) && (col >= 5));
+                boolean occupied = !(row == 3 && col == 3) && !invalid;
+                board[row][col] = new Square(row, col, occupied, invalid);
+            }
+        }
     }
+
+    public Square[][] getBoard() {
+        return board;
+    }
+
 
     private boolean isValidMove(int sourceRow, int sourceCol, int targetRow, int targetCol) {
         return sourceRow >= 0 && sourceRow < board.length
                 && sourceCol >= 0 && sourceCol < board[sourceRow].length
                 && targetRow >= 0 && targetRow < board.length
                 && targetCol >= 0 && targetCol < board[targetRow].length
-                && board[targetRow][targetCol] == EMPTY
-                && board[(sourceRow + targetRow)/2][(sourceCol + targetCol)/2] == OCCUPIED
-                && board[sourceRow][sourceCol] == OCCUPIED;
+                && !board[targetRow][targetCol].isOccupied()
+                && board[(sourceRow + targetRow)/2][(sourceCol + targetCol)/2].isOccupied()
+                && board[sourceRow][sourceCol].isOccupied();
     }
 
     public ArrayList<ArrayList<Integer>> getValidMoves(int row, int col) {
@@ -61,20 +49,12 @@ public class PegBoard{
 
     public void movePeg(int sourceRow, int sourceCol, int targetRow, int targetCol) {
         if (isValidMove(sourceRow, sourceCol, targetRow, targetCol)) {
-            board[targetRow][targetCol] = OCCUPIED;
-            board[(sourceRow + targetRow)/2][(sourceCol + targetCol)/2] = EMPTY;
-            board[sourceRow][sourceCol] = EMPTY;
+            board[targetRow][targetCol].setOccupied(true);
+            board[(sourceRow + targetRow)/2][(sourceCol + targetCol)/2].setOccupied(false);
+            board[sourceRow][sourceCol].setOccupied(false);
         }
     }
 
-    public boolean isBoardCleared() {
-        for (int row = 0; row < board.length; row++) {
-            for (int col = 0; col < board[row].length; col++) {
-                if (board[row][col] == clearBoard[row][col]) return false;
-            }
-        }
-        return true;
-    }
 
     public void isGameOver() {
 
