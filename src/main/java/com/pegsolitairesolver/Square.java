@@ -24,12 +24,21 @@ public class Square extends StackPane {
         this.setLayoutX(155+70*row);
         this.setLayoutY(70+70*col);
         this.setPrefSize(70, 70);
-        if (!invalid) this.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+
+        if (!invalid) setupValidSquare();
     }
 
-    public PegPiece getPegPiece() {
-        return (PegPiece) this.getChildren().get(0);
+    private void setupValidSquare() {
+        this.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
     }
+
+    public String getName() {
+        return ""+row+col;
+    }
+
+    public int getRow() {return row;}
+
+    public int getCol() {return col;}
 
     public boolean isOccupied() {
         return occupied;
