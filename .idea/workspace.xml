@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162c5394-09bb-4308-97b3-6c8f494c8a59" name="Changes" comment="Minor modifications in application files.">
+    <list default="true" id="162c5394-09bb-4308-97b3-6c8f494c8a59" name="Changes" comment="Changes in workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegBoard.java" afterDir="false" />
@@ -117,8 +117,54 @@
       <option name="project" value="LOCAL" />
       <updated>1673704714445</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Created pegBoard and modified start.">
+      <created>1673791844607</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673791844607</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Modified PegBoard to utilize Square objects. Modified methods.">
+      <created>1673791879246</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673791879246</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Created row and col. Modified Square to contain PegPiece if occupied upon initialization.">
+      <created>1673791978343</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673791978343</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Created row and col. Created and modified constructor for circle.">
+      <created>1673792009774</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1673792009774</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changes in workspace.xml">
+      <created>1673792027558</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673792027558</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
@@ -127,6 +173,11 @@
     <MESSAGE value="Init of Square.java" />
     <MESSAGE value="Added utility methods for PegBoard" />
     <MESSAGE value="Minor modifications in application files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor modifications in application files." />
+    <MESSAGE value="Created pegBoard and modified start." />
+    <MESSAGE value="Modified PegBoard to utilize Square objects. Modified methods." />
+    <MESSAGE value="Created row and col. Modified Square to contain PegPiece if occupied upon initialization." />
+    <MESSAGE value="Created row and col. Created and modified constructor for circle." />
+    <MESSAGE value="Changes in workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes in workspace.xml" />
   </component>
 </project>
