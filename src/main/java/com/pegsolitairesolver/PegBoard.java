@@ -50,7 +50,6 @@ public class PegBoard extends Group {
         if (isValidMove(row, col, row, col+2)) pegPiece.addValidMove(""+row+(col+2));
     }
 
-
     public void showValidMoves(boolean show, PegPiece currentPegPiece) {
         if (show) {
             Glow glow = new Glow();
@@ -73,12 +72,7 @@ public class PegBoard extends Group {
         }
     }
 
-
     public void isGameOver() {
-
-    }
-
-    public void displayBoard() {
 
     }
 }
