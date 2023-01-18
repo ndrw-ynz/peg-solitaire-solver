@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.event.EventTarget;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 
 public class MainApplication extends Application {
 
+    private Group rootNode;
     private PegBoard pegBoard;
     private PegPiece currentPegPiece;
 
@@ -21,14 +23,38 @@ public class MainApplication extends Application {
         stage.setHeight(800);
         stage.setResizable(false);
 
-        Group rootNode = new Group();
+        rootNode = new Group();
         Scene scene = new Scene(rootNode);
 
         // Text
         Text text = new Text(10, 10, "Peg Solitaire Solver");
+        rootNode.getChildren().add(text);
 
         // PegBoard
+        setupPegBoard();
+
+        // Button Reset
+        Button restartButton = new Button("Restart");
+        restartButton.setOnAction(event -> {
+            rootNode.getChildren().remove(pegBoard);
+            setupPegBoard();
+        });
+        rootNode.getChildren().add(restartButton);
+
+        // Button Solve Peg Board
+        Button solveButton = new Button("Solve");
+        restartButton.setOnAction(event -> {
+
+        });
+        rootNode.getChildren().add(solveButton);
+
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void setupPegBoard() {
         pegBoard = new PegBoard();
+        currentPegPiece = null;
         Square[][] squares = pegBoard.getBoard();
         for (int row = 0; row < 7; row++) {
             for (int col = 0; col < 7; col++) {
@@ -36,11 +62,7 @@ public class MainApplication extends Application {
             }
         }
         setupPegBoardEventHandler(pegBoard);
-
-        rootNode.getChildren().addAll(text, pegBoard);
-
-        stage.setScene(scene);
-        stage.show();
+        rootNode.getChildren().add(pegBoard);
     }
 
     private void setupPegBoardEventHandler(PegBoard pegBoard) {
@@ -96,7 +118,6 @@ public class MainApplication extends Application {
     }
 
     private void movePegPiece(Square destinationSquare){
-        System.out.println("MOVE!");
         Square initialSquare = (Square) currentPegPiece.getParent();
         Square killSquare = pegBoard.getBoard()[(currentPegPiece.getRow() + destinationSquare.getRow())/2][(currentPegPiece.getCol() + destinationSquare.getCol())/2];
 
