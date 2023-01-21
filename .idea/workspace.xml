@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="162c5394-09bb-4308-97b3-6c8f494c8a59" name="Changes" comment="Changes in workspace.xml">
+    <list default="true" id="162c5394-09bb-4308-97b3-6c8f494c8a59" name="Changes" comment="Created methods for solving the current peg board of Solver.java. Added javadoc.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_13_2023_9_54_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_13_2023_9_54_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/PegPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pegsolitairesolver/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,8 +151,103 @@
       <option name="project" value="LOCAL" />
       <updated>1673792027558</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Created row, col variables. Created getRow, getCol, getValidMoves, addValidMove, and resetValidMoves methods.">
+      <created>1673967557096</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673967557096</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Created setupValidSquare, getName, getRow, and getCol methods.">
+      <created>1673967594621</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673967594621</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Modifed getPegPieceValidMoves, showValidMoves.">
+      <created>1673967635808</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673967635808</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Created setupPegBoardEventHandler, selectPegPiece, deselectPegPiece, and movePegPiece.">
+      <created>1673967670306</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673967670306</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Modified current application to enable logic of game.">
+      <created>1673967712622</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673967712622</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Created restart button and solve button. Created setupPegBoard. Modified constructor.">
+      <created>1674049583477</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1674049583477</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Removed displayBoard">
+      <created>1674049623400</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1674049623400</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Init Solver.java">
+      <created>1674049641340</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1674049641340</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Created javadoc of PegPiece.java.">
+      <created>1674310521767</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1674310521767</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Created javadoc of Square.java">
+      <created>1674310545532</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1674310545533</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Created javadoc of PegBoard.java">
+      <created>1674310573696</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1674310573696</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Created methods for solving the current peg board of Solver.java. Added javadoc.">
+      <created>1674310632410</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1674310632410</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -178,6 +272,18 @@
     <MESSAGE value="Created row and col. Modified Square to contain PegPiece if occupied upon initialization." />
     <MESSAGE value="Created row and col. Created and modified constructor for circle." />
     <MESSAGE value="Changes in workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in workspace.xml" />
+    <MESSAGE value="Created row, col variables. Created getRow, getCol, getValidMoves, addValidMove, and resetValidMoves methods." />
+    <MESSAGE value="Created setupValidSquare, getName, getRow, and getCol methods." />
+    <MESSAGE value="Modifed getPegPieceValidMoves, showValidMoves." />
+    <MESSAGE value="Created setupPegBoardEventHandler, selectPegPiece, deselectPegPiece, and movePegPiece." />
+    <MESSAGE value="Modified current application to enable logic of game." />
+    <MESSAGE value="Created restart button and solve button. Created setupPegBoard. Modified constructor." />
+    <MESSAGE value="Removed displayBoard" />
+    <MESSAGE value="Init Solver.java" />
+    <MESSAGE value="Created javadoc of PegPiece.java." />
+    <MESSAGE value="Created javadoc of Square.java" />
+    <MESSAGE value="Created javadoc of PegBoard.java" />
+    <MESSAGE value="Created methods for solving the current peg board of Solver.java. Added javadoc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created methods for solving the current peg board of Solver.java. Added javadoc." />
   </component>
 </project>
