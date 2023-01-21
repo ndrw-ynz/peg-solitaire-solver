@@ -10,10 +10,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * The class MainApplication contains the scenes and nodes, and the logic
+ * used in the main GUI application.
+ */
 public class MainApplication extends Application {
-
+    /**The root node of the main scene of the application.*/
     private Group rootNode;
+    /**The current peg board of the application.*/
     private PegBoard pegBoard;
+    /**The current active peg piece of the application.*/
     private PegPiece currentPegPiece;
 
     @Override
@@ -35,16 +41,29 @@ public class MainApplication extends Application {
 
         // Button Reset
         Button restartButton = new Button("Restart");
+        restartButton.setLayoutX(800/2.0-25);
+        restartButton.setLayoutY(600);
         restartButton.setOnAction(event -> {
             rootNode.getChildren().remove(pegBoard);
             setupPegBoard();
         });
         rootNode.getChildren().add(restartButton);
 
-        // Button Solve Peg Board
+        // Button Solve
         Button solveButton = new Button("Solve");
-        restartButton.setOnAction(event -> {
-
+        solveButton.setLayoutX(800/2.0-20);
+        solveButton.setLayoutY(640);
+        solveButton.setOnAction(event -> {
+            Solver solver = new Solver(this.pegBoard);
+            boolean solved = solver.solve();
+            System.out.println("Done!");
+            if (solved) {
+                System.out.println("Solved!");
+            } else {
+                System.out.println("Unsolvable!");
+                solver.printBoard();
+                solver.printOutput();
+            }
         });
         rootNode.getChildren().add(solveButton);
 
@@ -52,6 +71,9 @@ public class MainApplication extends Application {
         stage.show();
     }
 
+    /**
+     * Sets up the peg board of the GUI application.
+     */
     private void setupPegBoard() {
         pegBoard = new PegBoard();
         currentPegPiece = null;
@@ -65,6 +87,10 @@ public class MainApplication extends Application {
         rootNode.getChildren().add(pegBoard);
     }
 
+    /**
+     * Sets up the event handlers of the application.
+     * @param pegBoard The current peg board of the application.
+     */
     private void setupPegBoardEventHandler(PegBoard pegBoard) {
         pegBoard.setOnMouseClicked(event -> {
             EventTarget target = event.getTarget();
@@ -101,6 +127,10 @@ public class MainApplication extends Application {
         });
     }
 
+    /**
+     * Applies effects on the Nodes displayed on the current Scene of the GUI application
+     * as a peg piece is selected.
+     */
     private void selectPegPiece() {
         DropShadow borderGlow = new DropShadow();
         borderGlow.setColor(Color.BLACK);
@@ -111,12 +141,20 @@ public class MainApplication extends Application {
         pegBoard.showValidMoves(true, currentPegPiece);
     }
 
+    /**
+     * Removes effects on the Node displayed on the current Scene of the GUI application
+     * as a peg piece is deselected.
+     */
     private void deselectPegPiece() {
         currentPegPiece.setEffect(null);
         pegBoard.showValidMoves(false, currentPegPiece);
         currentPegPiece = null;
     }
 
+    /**
+     * Moves a given peg piece on a given destination.
+     * @param destinationSquare The Square destination of the peg piece.
+     */
     private void movePegPiece(Square destinationSquare){
         Square initialSquare = (Square) currentPegPiece.getParent();
         Square killSquare = pegBoard.getBoard()[(currentPegPiece.getRow() + destinationSquare.getRow())/2][(currentPegPiece.getCol() + destinationSquare.getCol())/2];
