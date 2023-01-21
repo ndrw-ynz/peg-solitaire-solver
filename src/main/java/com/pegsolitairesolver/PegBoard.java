@@ -14,6 +14,9 @@ public class PegBoard extends Group {
     /**The peg board containing peg pieces.*/
     private final Square[][] board;
 
+    /**
+     * Initializes a new peg board on a starting state
+     */
     public PegBoard() {
         this.board = new Square[7][7];
         for (int row = 0; row < 7; row++) {
@@ -25,10 +28,22 @@ public class PegBoard extends Group {
         }
     }
 
+    /**
+     * Fetchess the current state of the peg board.
+     * @return Returns a 2D square array.
+     */
     public Square[][] getBoard() {
         return board;
     }
 
+    /**
+     * Determines if a given move is valid based on its source and target row and col.
+     * @param sourceRow The source row of the move.
+     * @param sourceCol The source col of the move.
+     * @param targetRow The target row of the move.
+     * @param targetCol The target col of the move.
+     * @return Returns a boolean value determining if the move is valid.
+     */
     private boolean isValidMove(int sourceRow, int sourceCol, int targetRow, int targetCol) {
         return sourceRow >= 0 && sourceRow < board.length
                 && sourceCol >= 0 && sourceCol < board[sourceRow].length
@@ -40,6 +55,10 @@ public class PegBoard extends Group {
                 && board[sourceRow][sourceCol].isOccupied();
     }
 
+    /**
+     * Determines the current valid moves of a given peg piece.
+     * @param pegPiece The current peg piece.
+     */
     public void getPegPieceValidMoves(PegPiece pegPiece) {
         int row = pegPiece.getRow();
         int col = pegPiece.getCol();
@@ -50,6 +69,11 @@ public class PegBoard extends Group {
         if (isValidMove(row, col, row, col+2)) pegPiece.addValidMove(""+row+(col+2));
     }
 
+    /**
+     * Applies effects on Squares based from the valid moves of the current peg piece.
+     * @param show A boolean value determining if special effects are applied.
+     * @param currentPegPiece The current peg piece.
+     */
     public void showValidMoves(boolean show, PegPiece currentPegPiece) {
         if (show) {
             Glow glow = new Glow();
@@ -70,9 +94,5 @@ public class PegBoard extends Group {
                 square.setBorder(new Border(new BorderStroke(Color.BLACK, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
             }
         }
-    }
-
-    public void isGameOver() {
-
     }
 }
